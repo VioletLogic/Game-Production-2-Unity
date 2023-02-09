@@ -17,13 +17,13 @@ public class Rune : MonoBehaviour
     public Ability abilityUltimate;
     public float  cooldownUltimate;
 
-    private GameController gameController;
+    public GameController gameController;
     
     // Start is called before the first frame update
     void Start()
     {
-        gameController = GameObject.FindObjectOfType<GameController>();
-        Debug.Log(FindObjectOfType<GameController>());
+        //gameController = GameObject.FindObjectOfType<GameController>();
+        //Debug.Log(FindObjectOfType<GameController>());
     }
 
     // Update is called once per frame

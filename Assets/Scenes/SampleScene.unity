@@ -8087,7 +8087,12 @@ MonoBehaviour:
   player: {fileID: 648659895}
   playerSpeed: 2
   playerJump: 3
-  runes: []
+  runes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &2009292624
 Transform:
   m_ObjectHideFlags: 0
