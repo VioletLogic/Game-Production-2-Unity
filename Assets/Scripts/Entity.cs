@@ -8,6 +8,8 @@ public class Entity : MonoBehaviour
 {
     Rigidbody2D rigidbody;
     Collider2D collider;
+
+    public int health; 
     
     // Start is called before the first frame update
     void Start()
