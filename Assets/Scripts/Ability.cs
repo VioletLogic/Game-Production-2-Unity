@@ -22,7 +22,7 @@ public class Ability : MonoBehaviour
     
     public Effect.Type RequitesEffect;
     public Effect.Type BlockedByEffect;
-    public Effect.Type AppliesEffect;
+    public Effect AppliesEffect;
 
     [TextArea(5, 10)]
     public string Notes;
