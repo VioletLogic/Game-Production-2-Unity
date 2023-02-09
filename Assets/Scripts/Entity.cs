@@ -12,6 +12,14 @@ public class Entity : MonoBehaviour
     public float health;
     public Effect[] effectList;
     
+    //Movement
+    public float speed;
+    public float jump;
+    public float moveVelocity;
+
+    //Grounded
+    bool grounded = true;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +31,8 @@ public class Entity : MonoBehaviour
     void FixedUpdate()
     {
         effectList = GetComponents<Effect>();
+        
+        rigidbody.velocity = new Vector2(moveVelocity, rigidbody.velocity.y);
     }
 
     public bool HasEffect(Effect.Type effect, bool ifNone)
@@ -37,9 +47,32 @@ public class Entity : MonoBehaviour
                     return true;
                 }
             }
-
             return false;
         }
         return ifNone;
+    }
+
+    public void moveLeft()
+    {
+        rigidbody.AddForce(Vector2.left * speed);
+    }
+    public void moveRight()
+    {
+        rigidbody.AddForce(Vector2.right * speed);
+    }
+
+    public void moveJump()
+    {
+        rigidbody.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
+    }
+    
+    //Check if Grounded
+    void OnTriggerEnter2D()
+    {
+        grounded = true;
+    }
+    void OnTriggerExit2D()
+    {
+        grounded = false;
     }
 }
