@@ -946,7 +946,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1071,10 +1071,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38aca68b67b5e304081f439f7a45b771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  rigidbody: {fileID: 648659893}
+  collider: {fileID: 648659892}
+  health: 10
   effectList: []
-  speed: 0
-  jump: 0
+  speed: 1100
+  jump: 100
   moveVelocity: 0
 --- !u!212 &648659896
 SpriteRenderer:
@@ -1320,6 +1322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d35cce75355ab4aa3d60fb2c8009bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 1852963308}
+  collider: {fileID: 1852963309}
   health: 10
   effectList: []
   speed: 0

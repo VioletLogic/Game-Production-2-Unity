@@ -6,8 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Entity : MonoBehaviour
 {
-    Rigidbody2D rigidbody;
-    Collider2D collider;
+    public Rigidbody2D rigidbody;
+    public Collider2D collider;
 
     public float health;
     public Effect[] effectList;
@@ -23,8 +23,8 @@ public class Entity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        collider = GetComponent<Collider2D>();
+        //rigidbody = GetComponent<Rigidbody2D>();
+        //collider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
