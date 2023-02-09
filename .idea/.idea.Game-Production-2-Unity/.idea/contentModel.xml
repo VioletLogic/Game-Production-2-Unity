@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Violet\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Violet\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Game-Production-2-Unity.-1842636760.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Violet\Documents\George Brown\Year 1 Semseter 2\Game Production\Game-Production-2-Unity" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Ability.cs" t="Include" />
+          <e p="Effect.cs" t="Include" />
+          <e p="Enemy.cs" t="Include" />
+          <e p="Entity.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
+          <e p="Rune.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Game-Production-2-Unity.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

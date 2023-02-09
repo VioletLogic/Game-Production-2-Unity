@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 
 
-public class DummyAbility : MonoBehaviour
+public class Ability : MonoBehaviour
 {
     public string SpriteName;
     public int Damage = 1;
@@ -20,9 +20,9 @@ public class DummyAbility : MonoBehaviour
     public bool CollidesWithEnemyProjectiles;
     public bool CollidesWithTerrain;
     
-    public string RequitedEffect;
-    public string BlockedByEffect;
-    public string AppliesEffect;
+    public Effect.Type RequitesEffect;
+    public Effect.Type BlockedByEffect;
+    public Effect.Type AppliesEffect;
 
     [TextArea(5, 10)]
     public string Notes;
