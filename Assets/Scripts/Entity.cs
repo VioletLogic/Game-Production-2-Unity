@@ -21,4 +21,23 @@ public class Entity : MonoBehaviour
     {
         
     }
+
+    public bool HasEffect(Effect.Type effect, bool ifNone)
+    {
+        //return if an effect of Type exists in children components
+        if (effect != Effect.Type.None)
+        {
+            Effect[] list = GetComponents<Effect>();
+            foreach (var e in list)
+            {
+                if (e.type == effect)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        return ifNone;
+    }
 }

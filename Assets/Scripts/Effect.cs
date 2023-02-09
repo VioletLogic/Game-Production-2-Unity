@@ -8,6 +8,9 @@ public class Effect : MonoBehaviour
     {
         None, Burning, Wet, Frozen, Airborne, Stunned, Grounded, Phasing, Regeneration, Corruption 
     }
+
+    public Type type;
+    public int level;
     
     // Start is called before the first frame update
     void Start()

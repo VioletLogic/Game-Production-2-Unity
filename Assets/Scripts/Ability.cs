@@ -52,13 +52,13 @@ public class Ability : MonoBehaviour
             if (collidesWith == (collidesWith | (1 << e.gameObject.layer)))
             {
                 Debug.Log("Ability Hit");
-                if (!e.hasEffect(BlockedByEffect))
+                if (!e.HasEffect(BlockedByEffect, false))
                 {
-                    if (RequitesEffect)
-                    Effect effect = Instantiate(AppliesEffect, e.gameObject.transform);
+                    if (e.HasEffect(RequitesEffect, true))
+                    {
+                        Effect effect = Instantiate(AppliesEffect, e.gameObject.transform);
+                    }
                 }
-                
-                Destroy(other.gameObject);
                 MaxHits--;
                 if (MaxHits <= 0)
                 {
