@@ -9,7 +9,8 @@ public class Entity : MonoBehaviour
     Rigidbody2D rigidbody;
     Collider2D collider;
 
-    public int health; 
+    public float health;
+    public Effect[] effectList;
     
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,9 @@ public class Entity : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        effectList = GetComponents<Effect>();
     }
 
     public bool HasEffect(Effect.Type effect, bool ifNone)
@@ -29,8 +30,7 @@ public class Entity : MonoBehaviour
         //return if an effect of Type exists in children components
         if (effect != Effect.Type.None)
         {
-            Effect[] list = GetComponents<Effect>();
-            foreach (var e in list)
+            foreach (var e in effectList)
             {
                 if (e.type == effect)
                 {
