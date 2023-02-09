@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class Rune : MonoBehaviour
 {
-    public Ability passive;
-    public Ability basic;
-    public Ability special;
-    public Ability utility;
-    public Ability ultimate;
+    public int level;
+    
+    public Ability abilityPassive;
+    public float  cooldownPassive;
+    public Ability abilityBasic;
+    public float  cooldownBasic;
+    public Ability abilitySpecial;
+    public float  cooldownSpecial;
+    public Ability abilityUtility;
+    public float  cooldownUtility;
+    public Ability abilityUltimate;
+    public float  cooldownUltimate;
+
+    private GameController gameController;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameController = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -21,4 +30,10 @@ public class Rune : MonoBehaviour
     {
         
     }
+
+    public void ActivateAbility(Ability ability)
+    {
+        Instantiate(ability, gameController.player.transform.position, gameController.player.transform.rotation);
+    }
+    
 }
