@@ -27,19 +27,19 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         runes = GetComponentsInChildren<Rune>();
         //Debug.Log(runes.Length);
         
         player.rigidbody.velocity = new Vector2(0, player.rigidbody.velocity.y);
         //Left
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             player.rigidbody.velocity += Vector2.left * playerSpeed;
         }
         //Right
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             player.rigidbody.velocity += Vector2.right * playerSpeed;
         }
@@ -83,10 +83,10 @@ public class GameController : MonoBehaviour
             
         }
 
-        cdPassive -= Time.fixedDeltaTime;
-        cdBasic -= Time.fixedDeltaTime;
-        cdSpecial -= Time.fixedDeltaTime;
-        cdUtility -= Time.fixedDeltaTime;
-        cdUltimate -= Time.fixedDeltaTime;
+        cdPassive -= Time.deltaTime;
+        cdBasic -= Time.deltaTime;
+        cdSpecial -= Time.deltaTime;
+        cdUtility -= Time.deltaTime;
+        cdUltimate -= Time.deltaTime;
     }
 }
