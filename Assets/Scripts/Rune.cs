@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Rune : MonoBehaviour
 {
+    public Ability passive;
+    public Ability basic;
+    public Ability special;
+    public Ability utility;
+    public Ability ultimate;
+    
     // Start is called before the first frame update
     void Start()
     {
