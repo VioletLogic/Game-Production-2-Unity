@@ -15,7 +15,7 @@ public class Ability : MonoBehaviour
     public Vector2 direction = Vector2.right;
     public float gravaty = 0;
 
-    public LayerMask collidesWith;
+    public string collidesWith;
     
     public Effect.Type requitesEffect;
     public Effect.Type blockedByEffect;
@@ -50,7 +50,7 @@ public class Ability : MonoBehaviour
         Entity e = other.gameObject.GetComponent<Entity>();
         if (e != null)
         {
-            if (collidesWith == (collidesWith | (1 << e.gameObject.layer)))
+            if (collidesWith.Contains(e.tag))
             {
                 Debug.Log("Ability Hit");
                 if (!e.HasEffect(blockedByEffect, false))

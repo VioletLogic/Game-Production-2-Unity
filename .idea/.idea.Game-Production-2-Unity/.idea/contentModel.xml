@@ -15,6 +15,30 @@
           <e p="Player.cs" t="Include" />
           <e p="Rune.cs" t="Include" />
         </e>
+        <e p="Sprites" t="Include">
+          <e p="Charactors" t="Include">
+            <e p="Bounty Hunter" t="Include">
+              <e p="Contact.txt" t="Include" />
+              <e p="License.txt" t="Include" />
+            </e>
+            <e p="Bringer Of Death" t="Include">
+              <e p="Contact.txt" t="Include" />
+              <e p="License.txt" t="Include" />
+            </e>
+            <e p="Cultist Enemy Pack" t="Include">
+              <e p="Contact.txt" t="Include" />
+              <e p="License.txt" t="Include" />
+            </e>
+            <e p="Warrior" t="Include">
+              <e p="Contact.txt" t="Include" />
+              <e p="License.txt" t="Include" />
+            </e>
+          </e>
+          <e p="Country Village Tileset" t="Include">
+            <e p="Contact.txt" t="Include" />
+            <e p="Lisense.txt" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Game-Production-2-Unity.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
