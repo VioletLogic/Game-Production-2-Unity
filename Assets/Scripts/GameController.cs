@@ -11,11 +11,7 @@ public class GameController : MonoBehaviour
     public float playerSpeed;
     public float playerJump;
     
-    public Rune slotPassive;
-    public Rune slotBasic;
-    public Rune slotSpecial;
-    public Rune slotUtility;
-    public Rune slotUltimate;
+    public Rune[] runes;
     
     float cdPassive;
     float cdBasic;
@@ -33,6 +29,9 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        runes = GetComponentsInChildren<Rune>();
+        //Debug.Log(runes.Length);
+        
         player.rigidbody.velocity = new Vector2(0, player.rigidbody.velocity.y);
         //Left
         if (Input.GetKeyDown(KeyCode.A))
@@ -50,24 +49,28 @@ public class GameController : MonoBehaviour
             player.rigidbody.velocity += Vector2.up * playerJump;
         }
         //Basic
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && cdBasic <= 0)
         {
-            slotBasic.ActivateAbility(1);
+            runes[1].ActivateAbility(1);
+            cdBasic = runes[1].cooldownBasic;
         }
         //Special
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && cdSpecial <= 0)
         {
-            slotBasic.ActivateAbility(2);
+            runes[2].ActivateAbility(2);
+            cdSpecial = runes[2].cooldownSpecial;
         }
         //Utility
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && cdUtility <= 0)
         {
-            slotBasic.ActivateAbility(3);
+            runes[3].ActivateAbility(3);
+            cdUtility = runes[3].cooldownUtility;
         }
         //Ultimate
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && cdUltimate <= 0)
         {
-            slotBasic.ActivateAbility(4);
+            runes[4].ActivateAbility(4);
+            cdUltimate = runes[4].cooldownUltimate;
         }
         //Interact
         if (Input.GetKeyDown(KeyCode.Q))
@@ -79,5 +82,11 @@ public class GameController : MonoBehaviour
         {
             
         }
+
+        cdPassive -= Time.fixedDeltaTime;
+        cdBasic -= Time.fixedDeltaTime;
+        cdSpecial -= Time.fixedDeltaTime;
+        cdUtility -= Time.fixedDeltaTime;
+        cdUltimate -= Time.fixedDeltaTime;
     }
 }

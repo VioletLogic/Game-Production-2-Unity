@@ -1151,8 +1151,6 @@ MonoBehaviour:
   collider: {fileID: 648659892}
   health: 10
   effectList: []
-  speed: 2
-  jump: 100
 --- !u!212 &648659896
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1494,11 +1492,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 648659895}
-  passive: {fileID: 0}
-  basic: {fileID: 0}
-  special: {fileID: 6158291409424523039, guid: ad3f9b8b4888055448a4d3d6697a970d, type: 3}
-  utility: {fileID: 0}
-  ultimate: {fileID: 0}
+  playerSpeed: 0
+  playerJump: 0
+  slotPassive: {fileID: 0}
+  slotBasic: {fileID: 0}
+  slotSpecial: {fileID: 6158291409424523039, guid: ad3f9b8b4888055448a4d3d6697a970d,
+    type: 3}
+  slotUtility: {fileID: 0}
+  slotUltimate: {fileID: 0}
 --- !u!4 &2009292624
 Transform:
   m_ObjectHideFlags: 0

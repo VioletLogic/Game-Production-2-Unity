@@ -23,6 +23,7 @@ public class Rune : MonoBehaviour
     void Start()
     {
         gameController = GameObject.FindObjectOfType<GameController>();
+        Debug.Log(FindObjectOfType<GameController>());
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class Rune : MonoBehaviour
 
     public void ActivateAbility(int slot)
     {
-        Transform p = gameController.player.transform;
+        Transform p = transform.parent.GetComponent<GameController>().player.transform;
         switch (slot)
         {
             case 0:
