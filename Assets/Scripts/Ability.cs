@@ -8,14 +8,18 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Ability : MonoBehaviour
 {
-    public string spriteName;
-    public int damage = 1;
-    public int maxHits = 1;
-    public float duration = 1.0f;
+    public float damage = 1;
+    public float duration = 1f;
     public Vector2 direction = Vector2.right;
+    public Vector2 offset;
     public float gravaty = 0;
 
     public string collidesWith;
+    public int maxHits = 1;
+    public float onHitMultiplyDamage = 1;
+    public float onHitMultiplyDuration = 1;
+    public float onHitMultiplySpeed = 1;
+    public float onHitMultiplyGravity = 1;
     
     public Effect.Type requitesEffect;
     public Effect.Type blockedByEffect;
@@ -30,6 +34,7 @@ public class Ability : MonoBehaviour
     void Start()
     {
         tag = "Ability";
+        transform.position += new Vector3(offset.x, offset.y, 0);
     }
 
     // Update is called once per frame
@@ -60,6 +65,14 @@ public class Ability : MonoBehaviour
                         Effect effect = Instantiate(appliesEffect, e.gameObject.transform);
                     }
                 }
+
+                e.health -= damage;
+
+                damage *= onHitMultiplyDamage;
+                duration *= onHitMultiplyDuration;
+                direction *= onHitMultiplySpeed;
+                gravaty *= onHitMultiplyGravity;
+                
                 maxHits--;
                 if (maxHits <= 0)
                 {
