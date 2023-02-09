@@ -6,7 +6,7 @@ public class Effect : MonoBehaviour
 {
     public enum Type
     {
-        Burning, Wet, Frozen, Airborne, Stunned, Grounded, Phasing, Regeneration, Corruption 
+        None, Burning, Wet, Frozen, Airborne, Stunned, Grounded, Phasing, Regeneration, Corruption 
     }
     
     // Start is called before the first frame update

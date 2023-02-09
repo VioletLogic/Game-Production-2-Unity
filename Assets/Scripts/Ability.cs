@@ -14,11 +14,7 @@ public class Ability : MonoBehaviour
     public Vector2 Direction = Vector2.right;
     public float Gravaty = 0;
 
-    public bool CollidesWithPlayer;
-    public bool CollidesWithPlayerProjectiles;
-    public bool CollidesWithEnemies;
-    public bool CollidesWithEnemyProjectiles;
-    public bool CollidesWithTerrain;
+    public LayerMask collidesWith;
     
     public Effect.Type RequitesEffect;
     public Effect.Type BlockedByEffect;
@@ -50,12 +46,25 @@ public class Ability : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Ability Hit");
-        Destroy(other.gameObject);
-        MaxHits--;
-        if (MaxHits <= 0)
+        Entity e = other.gameObject.GetComponent<Entity>();
+        if (e != null)
         {
-            Destroy(gameObject);
+            if (collidesWith == (collidesWith | (1 << e.gameObject.layer)))
+            {
+                Debug.Log("Ability Hit");
+                if (!e.hasEffect(BlockedByEffect))
+                {
+                    if (RequitesEffect)
+                    Effect effect = Instantiate(AppliesEffect, e.gameObject.transform);
+                }
+                
+                Destroy(other.gameObject);
+                MaxHits--;
+                if (MaxHits <= 0)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 }

@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerAbility
+  - EnemyAbility
+  - Player
+  - Enemy
   - 
   - 
   - 
