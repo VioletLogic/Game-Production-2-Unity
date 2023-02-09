@@ -31,10 +31,27 @@ public class Rune : MonoBehaviour
         
     }
 
-    public void ActivateAbility(Ability ability)
+    public void ActivateAbility(int slot)
     {
         Transform p = gameController.player.transform;
-        Instantiate(ability, p.position, p.rotation);
+        switch (slot)
+        {
+            case 0:
+                Instantiate(abilityPassive, p.position, p.rotation);
+                break;
+            case 1:
+                Instantiate(abilityBasic, p.position, p.rotation);
+                break;
+            case 2:
+                Instantiate(abilitySpecial, p.position, p.rotation);
+                break;
+            case 3:
+                Instantiate(abilityUtility, p.position, p.rotation);
+                break;
+            case 4:
+                Instantiate(abilityUltimate, p.position, p.rotation);
+                break;
+        }
     }
     
 }
