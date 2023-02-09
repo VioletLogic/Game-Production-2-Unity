@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7679034886619005664
 MonoBehaviour:
@@ -49,8 +49,9 @@ MonoBehaviour:
   cooldownPassive: 0
   abilityBasic: {fileID: 0}
   cooldownBasic: 0
-  abilitySpecial: {fileID: 0}
-  cooldownSpecial: 0
+  abilitySpecial: {fileID: 3994116911684351537, guid: 2ad81e497de631c4e9d27c429adf6f04,
+    type: 3}
+  cooldownSpecial: 5
   abilityUtility: {fileID: 0}
   cooldownUtility: 0
   abilityUltimate: {fileID: 0}
