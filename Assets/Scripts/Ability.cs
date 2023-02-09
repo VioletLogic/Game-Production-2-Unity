@@ -5,23 +5,24 @@ using UnityEditor;
 using UnityEngine;
 
 
+[RequireComponent(typeof(Collider2D))]
 public class Ability : MonoBehaviour
 {
-    public string SpriteName;
-    public int Damage = 1;
-    public int MaxHits = 1;
-    public float Duration = 1.0f;
-    public Vector2 Direction = Vector2.right;
-    public float Gravaty = 0;
+    public string spriteName;
+    public int damage = 1;
+    public int maxHits = 1;
+    public float duration = 1.0f;
+    public Vector2 direction = Vector2.right;
+    public float gravaty = 0;
 
     public LayerMask collidesWith;
     
-    public Effect.Type RequitesEffect;
-    public Effect.Type BlockedByEffect;
-    public Effect AppliesEffect;
+    public Effect.Type requitesEffect;
+    public Effect.Type blockedByEffect;
+    public Effect appliesEffect;
 
     [TextArea(5, 10)]
-    public string Notes;
+    public string notes;
 
     //public Collider2D Collider;
 
@@ -34,14 +35,14 @@ public class Ability : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Duration -= Time.fixedDeltaTime;
-        if (Duration <= 0)
+        duration -= Time.fixedDeltaTime;
+        if (duration <= 0)
         {
             Destroy(gameObject);
         }
 
-        transform.position += Time.fixedDeltaTime * new Vector3(Direction.x, Direction.y, 0);
-        Direction.y += Gravaty * Time.fixedDeltaTime;
+        transform.position += Time.fixedDeltaTime * new Vector3(direction.x, direction.y, 0);
+        direction.y += gravaty * Time.fixedDeltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -52,15 +53,15 @@ public class Ability : MonoBehaviour
             if (collidesWith == (collidesWith | (1 << e.gameObject.layer)))
             {
                 Debug.Log("Ability Hit");
-                if (!e.HasEffect(BlockedByEffect, false))
+                if (!e.HasEffect(blockedByEffect, false))
                 {
-                    if (e.HasEffect(RequitesEffect, true))
+                    if (e.HasEffect(requitesEffect, true))
                     {
-                        Effect effect = Instantiate(AppliesEffect, e.gameObject.transform);
+                        Effect effect = Instantiate(appliesEffect, e.gameObject.transform);
                     }
                 }
-                MaxHits--;
-                if (MaxHits <= 0)
+                maxHits--;
+                if (maxHits <= 0)
                 {
                     Destroy(gameObject);
                 }
