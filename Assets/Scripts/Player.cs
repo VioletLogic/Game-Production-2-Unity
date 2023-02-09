@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : Entity
 {
+    //Movement
     public float speed;
     public float jump;
     float moveVelocity;
