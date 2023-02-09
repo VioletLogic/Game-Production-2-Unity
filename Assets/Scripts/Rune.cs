@@ -22,7 +22,7 @@ public class Rune : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController = FindObjectOfType<GameController>();
+        gameController = GameObject.FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -33,7 +33,8 @@ public class Rune : MonoBehaviour
 
     public void ActivateAbility(Ability ability)
     {
-        Instantiate(ability, gameController.player.transform.position, gameController.player.transform.rotation);
+        Transform p = gameController.player.transform;
+        Instantiate(ability, p.position, p.rotation);
     }
     
 }
