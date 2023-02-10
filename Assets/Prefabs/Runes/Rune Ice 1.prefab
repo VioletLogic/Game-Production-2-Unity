@@ -47,8 +47,9 @@ MonoBehaviour:
   level: 1
   abilityPassive: {fileID: 0}
   cooldownPassive: 0
-  abilityBasic: {fileID: 0}
-  cooldownBasic: 0
+  abilityBasic: {fileID: 161266929155468227, guid: 98d3bcd45f0c9f846964b2cefafc0974,
+    type: 3}
+  cooldownBasic: 0.5
   abilitySpecial: {fileID: 3994116911684351537, guid: 2ad81e497de631c4e9d27c429adf6f04,
     type: 3}
   cooldownSpecial: 5
