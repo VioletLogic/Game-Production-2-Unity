@@ -3,7 +3,7 @@ guid: 190cec5717b9cfa409b72bdc2a01f888
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,9 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -31,16 +34,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -54,10 +57,15 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -71,9 +79,234 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Irregular rock Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 51
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9048bc34b0ee664418c25e2a032a2423
+      internalID: 1119059339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Irregular rock Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 54
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 511ee53e8a142cd48acff26c450e503e
+      internalID: -837384771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Irregular rock Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 58
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb9b1de1fee7814c850a17f3add8d76
+      internalID: -2063255068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Irregular rock Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 53
+        width: 41
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fed2798e0d682448e47249e11df881
+      internalID: -515778874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Irregular rock Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 57
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b55d591224a6448ae86f34d35a64d8
+      internalID: 758239891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Irregular rock Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 58
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb917ccbdf929cf449ab02b82f00e186
+      internalID: 866898824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Irregular rock Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 10
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b0b63d985e38740b8787ff956e63d3
+      internalID: -1286331670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Irregular rock Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 11
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dec622ec45617741ae97c64ccdff646
+      internalID: 926144357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Irregular rock Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 7
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24bafd40e2b85304eb555f8cfddb3c1f
+      internalID: -1423525299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -84,9 +317,48 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Irregular rock Spritesheet_16: 1261451569
+      Irregular rock Spritesheet_36: -8374960
+      Irregular rock Spritesheet_24: -1437565366
+      Irregular rock Spritesheet_21: -1043502041
+      Irregular rock Spritesheet_1: -837384771
+      Irregular rock Spritesheet_37: -139408628
+      Irregular rock Spritesheet_14: 973318072
+      Irregular rock Spritesheet_3: -498752576
+      Irregular rock Spritesheet_15: 1286305638
+      Irregular rock Spritesheet_19: 1524451818
+      Irregular rock Spritesheet_30: 2021628871
+      Irregular rock Spritesheet_34: -1423525299
+      Irregular rock Spritesheet_22: 22537941
+      Irregular rock Spritesheet_27: -645607736
+      Irregular rock Spritesheet_11: 438191033
+      Irregular rock Spritesheet_31: -675047920
+      Irregular rock Spritesheet_32: 926144357
+      Irregular rock Spritesheet_20: -90891914
+      Irregular rock Spritesheet_8: -1478046558
+      Irregular rock Spritesheet_10: -587950739
+      Irregular rock Spritesheet_25: -1229475321
+      Irregular rock Spritesheet_5: -515778874
+      Irregular rock Spritesheet_0: 1119059339
+      Irregular rock Spritesheet_35: -2107224774
+      Irregular rock Spritesheet_28: -1326034854
+      Irregular rock Spritesheet_18: -429564344
+      Irregular rock Spritesheet_6: 758239891
+      Irregular rock Spritesheet_12: 428309422
+      Irregular rock Spritesheet_23: -597655732
+      Irregular rock Spritesheet_7: 866898824
+      Irregular rock Spritesheet_4: 1493740677
+      Irregular rock Spritesheet_38: 1247222186
+      Irregular rock Spritesheet_2: -2063255068
+      Irregular rock Spritesheet_17: 1197139821
+      Irregular rock Spritesheet_9: 649412012
+      Irregular rock Spritesheet_13: 1624797713
+      Irregular rock Spritesheet_33: 1823672991
+      Irregular rock Spritesheet_26: 749539692
+      Irregular rock Spritesheet_29: -1286331670
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
