@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 
     public float playerSpeed;
     public float playerJump;
-    
+    [SerializeField] SpriteRenderer pSprite;
     public Rune[] runes;
     
     float cdPassive;
@@ -37,10 +37,12 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             player.rigidbody.velocity += Vector2.left * playerSpeed;
+            pSprite.flipX = true;
         }
         //Right
         if (Input.GetKey(KeyCode.D))
         {
+            pSprite.flipX = false;
             player.rigidbody.velocity += Vector2.right * playerSpeed;
         }
         //Jump

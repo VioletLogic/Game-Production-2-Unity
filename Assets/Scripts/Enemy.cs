@@ -10,6 +10,7 @@ public class Enemy : Entity
     Vector2 move;
     [SerializeField] float desiredDistance = 5;
     [SerializeField] SpriteRenderer enemy;
+    [SerializeField] GameObject shotPrefab;
    
 
     private void Awake()
@@ -35,6 +36,8 @@ public class Enemy : Entity
             // transform.LookAt(target);
             transform.rotation = target.rotation;
         }
+
+        
     }
     private void FixedUpdate()
     {
@@ -43,7 +46,6 @@ public class Enemy : Entity
         float distance = Vector3.Distance(target.position, transform.position);
 
 
-        print(distance);
 
         if (distance >= desiredDistance)
         {
@@ -66,6 +68,12 @@ public class Enemy : Entity
 
         
     }
-
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("uhu");
+        Destroy(other.gameObject);
+        Destroy(this.gameObject);
+    }
 }
 

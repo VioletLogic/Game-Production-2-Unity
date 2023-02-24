@@ -45,6 +45,8 @@ public class Ability : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        Vector2 pos = transform.position;
+
 
         transform.position += Time.fixedDeltaTime * new Vector3(direction.x, direction.y, 0);
         direction.y += gravaty * Time.fixedDeltaTime;
@@ -64,6 +66,7 @@ public class Ability : MonoBehaviour
                     {
                         Effect effect = Instantiate(appliesEffect, e.gameObject.transform);
                     }
+             
                 }
 
                 e.health -= damage;

@@ -153,3 +153,4 @@ MonoBehaviour:
   movespeed: 0.5
   desiredDistance: 1.5
   enemy: {fileID: 4600635260117576583}
+  shotPrefab: {fileID: 0}
