@@ -22,7 +22,7 @@ public class Entity : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        effectList = GetComponents<Effect>();
+       effectList = GetComponents<Effect>();
     }
 
     public bool HasEffect(Effect.Type effect, bool ifNone)
