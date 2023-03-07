@@ -46,7 +46,7 @@ public class Rune : MonoBehaviour
 
 
                 var projectile = Instantiate(abilityPassive, // Create fireball prefab when Jump
-               new Vector3(3, 0) + transform.position, // to avoid collision between Fireball and Blue Dragon need vector3
+               new Vector2(-1, 0) * transform.position, // to avoid collision between Fireball and Blue Dragon need vector3
                abilityPassive.transform.rotation); //to avoid rotaion
 
 

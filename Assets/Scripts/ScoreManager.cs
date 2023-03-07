@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     public int score;
     public int health;
-    public TMP_Text scoreText;
+    //public TMP_Text scoreText;
 
     public Sprite emptyHeart;
     public Sprite fullHeart;
@@ -25,10 +25,10 @@ public class ScoreManager : MonoBehaviour
     }
     void Start()
     {
-        score = 0;
+        //score = 0;
         health = 5;
         maxHealth = 5;
-        scoreText.text = "SCORE : " + score;
+        //scoreText.text = "SCORE : " + score;
     }
 
     // Update is called once per frame
@@ -59,8 +59,8 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        score += amount;
-        scoreText.text = "SCORE : " + score;
+        //score += amount;
+        //scoreText.text = "SCORE : " + score;
         //if(score == 10)
         //{
         //    GameManager.Instance.UpdateGameState(GameState.Win);

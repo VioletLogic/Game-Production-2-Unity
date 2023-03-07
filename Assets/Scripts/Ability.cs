@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Ability : MonoBehaviour
 {
+    public Player player;
 
     public float damage = 1;
     public float duration = 1f;
@@ -34,6 +35,7 @@ public class Ability : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponent<Player>();
         GetComponent<Rigidbody2D>().velocity = offset;
         tag = "Ability";
         transform.position += new Vector3(offset.x, offset.y, 0);
@@ -49,8 +51,16 @@ public class Ability : MonoBehaviour
         }
         Vector2 pos = transform.position;
 
+        //if(player.isFlipped)
+        //{
+            transform.position += Time.fixedDeltaTime * new Vector3(-direction.x, direction.y, 0);
 
-        transform.position += Time.fixedDeltaTime * new Vector3(direction.x, direction.y, 0);
+        //}
+        //else
+        //{
+        //    transform.position += Time.fixedDeltaTime * new Vector3(direction.x, direction.y, 0);
+
+        //}
         direction.y += gravaty * Time.fixedDeltaTime;
     }
 

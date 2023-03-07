@@ -11,6 +11,8 @@ public class Player : Entity
     private Animator animator;
 
     private SpriteRenderer mySpriteRenderer;
+    public bool isFlipped { get; set;  }
+
     private bool isJumping = false;
     private bool isRunning = false;
     private bool isHit = false;
@@ -33,6 +35,7 @@ public class Player : Entity
     void Start()
     {
         tag = "Player";
+        isFlipped = false;
     }
 
     // Update is called once per frame
@@ -47,7 +50,10 @@ public class Player : Entity
    
 
     }
-
+    public bool getFlipped()
+    {
+        return isFlipped;
+    }
     void Move()
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -64,7 +70,7 @@ public class Player : Entity
         if (Input.GetKeyDown(KeyCode.A))
         {
             isRunning = !isRunning;
-            Rotateleft();
+
             Debug.Log("left");
           
             // if the variable isn't empty (we have a reference to our SpriteRenderer
@@ -72,6 +78,7 @@ public class Player : Entity
             {
                 // flip the sprite
                 mySpriteRenderer.flipX = true;
+                isFlipped = true;
             }
 
 
@@ -82,6 +89,7 @@ public class Player : Entity
             isRunning = !isRunning;
             // flip the sprite
             mySpriteRenderer.flipX = false;
+            isFlipped=false;
         }
 
         //Jump
@@ -100,11 +108,7 @@ public class Player : Entity
         //}
     }
 
-    void Rotateleft()
-    {
-        //transform.Rotate(Vector3.forward * -180);
 
-    }
 
 }
 
