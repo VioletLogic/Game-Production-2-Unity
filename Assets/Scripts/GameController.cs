@@ -62,11 +62,11 @@ public class GameController : MonoBehaviour
     {
         player.rigidbody.velocity = new Vector2(0, player.rigidbody.velocity.y);
         //Left
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             isRunning = !isRunning;
+            pSprite.flipX = true;     
             player.rigidbody.velocity += Vector2.left * playerSpeed;
-            pSprite.flipX = true;
         }
         //Right
         if (Input.GetKey(KeyCode.D))
