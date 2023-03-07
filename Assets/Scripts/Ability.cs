@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Ability : MonoBehaviour
 {
+
     public float damage = 1;
     public float duration = 1f;
     public Vector2 direction = Vector2.right;
@@ -33,6 +34,7 @@ public class Ability : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Rigidbody2D>().velocity = offset;
         tag = "Ability";
         transform.position += new Vector3(offset.x, offset.y, 0);
     }

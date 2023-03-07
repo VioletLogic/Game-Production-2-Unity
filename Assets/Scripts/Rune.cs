@@ -34,11 +34,24 @@ public class Rune : MonoBehaviour
 
     public void ActivateAbility(int slot)
     {
+
+        //var projectile = Instantiate(projectilePrefab, // Create fireball prefab when Jump
+        //       new Vector3(3, 0) + transform.position, // to avoid collision between Fireball and Blue Dragon need vector3
+        //       projectilePrefab.transform.rotation); //to avoid rotaion
+
         Transform p = transform.parent.GetComponent<GameController>().player.transform;
         switch (slot)
         {
             case 0:
-                Instantiate(abilityPassive, p.position, p.rotation);
+
+
+                var projectile = Instantiate(abilityPassive, // Create fireball prefab when Jump
+               new Vector3(3, 0) + transform.position, // to avoid collision between Fireball and Blue Dragon need vector3
+               abilityPassive.transform.rotation); //to avoid rotaion
+
+
+
+                //Instantiate(abilityPassive, new Vector3(3, 0) + transform.position, p.rotation);
                 break;
             case 1:
                 Instantiate(abilityBasic, p.position, p.rotation);

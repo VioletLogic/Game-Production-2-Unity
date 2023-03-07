@@ -75,5 +75,16 @@ public class Enemy : Entity
         Destroy(other.gameObject);
         Destroy(this.gameObject);
     }
+
+    public void Die()
+    {
+
+        //GetComponent<Collider2D>().enabled = false;
+        //GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(gameObject, 0.2f);
+        FindObjectOfType<EnemySpawner>().enemiesCurrentCount -= 1;
+
+        ScoreManager.instance.AddScore(1);
+    }
 }
 

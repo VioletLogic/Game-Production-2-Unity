@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6385464620316373145}
   - component: {fileID: 6385464620316373150}
   - component: {fileID: 6385464620316373151}
+  - component: {fileID: 8868875314941893053}
   m_Layer: 0
   m_Name: Ability Fire Special 1
   m_TagString: Ability
@@ -124,10 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41049ce65863f3441b2f8bf38a433e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteName: 
   damage: 10
   duration: 3
   direction: {x: 5, y: 0}
+  offset: {x: 0, y: 0}
   gravaty: 0
   collidesWith: Enemy
   maxHits: 100
@@ -140,3 +141,24 @@ MonoBehaviour:
   appliesEffect: {fileID: 8235000675667163823, guid: 8c293adf5fb6bec4abcbc790d3466c7b,
     type: 3}
   notes: 
+--- !u!50 &8868875314941893053
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385464620316373148}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 2
