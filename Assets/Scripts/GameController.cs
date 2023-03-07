@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-
+    private float horizontalInput;
+    private float leftInput;
     //handles input
-    
+    private Animator animator;
     public Player player;
 
     public float playerSpeed;
@@ -20,18 +21,15 @@ public class GameController : MonoBehaviour
     float cdUtility;
     float cdUltimate;
 
-    private Animator animator;
     private bool isAttacking = false;
-    private bool isJumping = false;
-    private bool isRunning = false;
-    private bool isHit = false;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
+    
 
     }
 
@@ -39,9 +37,9 @@ public class GameController : MonoBehaviour
     void Update()
     {
         runes = GetComponentsInChildren<Rune>();
-        //Debug.Log(runes.Length);
+        
 
-        Move();
+        //Move();
         Attack();
         
        
@@ -60,28 +58,28 @@ public class GameController : MonoBehaviour
 
     void Move()
     {
-        player.rigidbody.velocity = new Vector2(0, player.rigidbody.velocity.y);
-        //Left
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            isRunning = !isRunning;
-            player.rigidbody.velocity += Vector2.left * playerSpeed;
-            pSprite.flipX = true;
-        }
-        //Right
-        if (Input.GetKey(KeyCode.D))
-        {
-            isRunning = !isRunning;
-            pSprite.flipX = false;
-            player.rigidbody.velocity += Vector2.right * playerSpeed;
-        }
-        //Jump
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isJumping = !isJumping;
-            player.rigidbody.velocity += Vector2.up * playerJump;
-        }
-        animator.SetBool("isRunning", isRunning);
+        //player.rigidbody.velocity = new Vector2(0, player.rigidbody.velocity.y);
+        ////Left
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    isRunning = !isRunning;
+        //    player.rigidbody.velocity += Vector2.left * playerSpeed;
+        //    pSprite.flipX = true;
+        //}
+        ////Right
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    isRunning = !isRunning;
+        //    pSprite.flipX = false;
+        //    player.rigidbody.velocity += Vector2.right * playerSpeed;
+        //}
+        ////Jump
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    isJumping = !isJumping;
+        //    player.rigidbody.velocity += Vector2.up * playerJump;
+        //}
+        //animator.SetBool("isRunning", isRunning);
     }
 
     void Attack()
@@ -114,7 +112,7 @@ public class GameController : MonoBehaviour
             runes[4].ActivateAbility(4);
             cdUltimate = runes[4].cooldownUltimate;
         }
-        animator.SetBool("isAttacking", isAttacking);
+        //animator.SetBool("isAttacking", isAttacking);
         isAttacking = false;
     }
 
