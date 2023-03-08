@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
@@ -48,6 +49,9 @@ public class Player : Entity
     {
         Move();
    
+        if(Input.GetKeyDown(KeyCode.Mouse0)) {
+            animator.Play("Player_Attack", 0);
+        };
 
     }
     public bool getFlipped()
