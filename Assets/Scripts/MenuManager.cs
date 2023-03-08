@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
+using static GameManager;
+
 public class MenuManager : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject pauseMenu, playButton;
+    private GameObject pauseMenu, losePanel, winPanel, StartPanel, playButton;
 
 
     //[SerializeField]
@@ -34,6 +36,13 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+        GameManager.Instance.ChangeState(GameState.Start);
+
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
         //GameManager.Instance.ChangeState(GameState.Win);
 
     }

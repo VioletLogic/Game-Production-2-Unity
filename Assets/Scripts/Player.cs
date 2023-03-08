@@ -16,7 +16,7 @@ public class Player : Entity
 
     private bool isJumping = false;
     private bool isRunning = false;
-    private bool isHit = false;
+
     private bool canJump = false;
     public float jumpForce = 3;
 
@@ -111,7 +111,6 @@ public class Player : Entity
         canJump = false;
         //}
     }
-
 
 
 }

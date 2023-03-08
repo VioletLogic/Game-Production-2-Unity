@@ -4,6 +4,9 @@ using System;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject pauseMenu, losePanel, winPanel, StartPanel, playButton;
+
     public static GameManager Instance;
     public static event Action<GameState> OnGameStateChanged;
     public static GameManager instance { get; private set; }
@@ -32,22 +35,24 @@ public class GameManager : MonoBehaviour
 
         switch (newstate)
         {
-            case GameState.Menu:
+            //case GameState.Menu:
 
-                Debug.Log("Menu State");
-                break;
+            //    Debug.Log("Menu State");
+            //    break;
             case GameState.Start:
                 Debug.Log("Start state");
                 break;
             case GameState.Win:
                 //stop game// show UI MENU
 
-                SceneManager.LoadScene(2);
+                //SceneManager.LoadScene(2);
+                winPanel.SetActive(true);
                 Debug.Log("wiiiiiiiiiiiiiiiiiiin");
                 break;
             case GameState.Lose:
                 //STOP GAME // SHOW UI MENU 
-                SceneManager.LoadScene(3);
+                //SceneManager.LoadScene(0);
+                losePanel.SetActive(true);
                 Debug.Log("Looooooooose");
                 break;
             default:
