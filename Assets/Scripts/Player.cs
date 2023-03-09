@@ -114,6 +114,7 @@ public class Player : Entity
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
+        position.y += transform.localScale.y / 2f;
         float distance = 1.0f;
         Debug.DrawRay(position, direction, Color.green);
 
