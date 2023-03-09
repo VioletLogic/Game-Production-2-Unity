@@ -45,6 +45,7 @@ public class MenuManager : MonoBehaviour
         
         SceneManager.LoadScene(0);
         //GameManager.Instance.ChangeState(GameState.Win);
+        
 
     }
 
@@ -55,6 +56,7 @@ public class MenuManager : MonoBehaviour
         {
             Pause();
         }
+         
     }
 
 
