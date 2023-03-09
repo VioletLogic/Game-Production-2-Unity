@@ -101,7 +101,7 @@ public class Player : Entity
 
 
         //Jump
-        if (Input.GetKeyDown(KeyCode.Space) && onGround == true)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
 
             Jump();
@@ -109,32 +109,7 @@ public class Player : Entity
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Terrain")
-        {
-            onGround = true;
-            canJump = true;
-            Debug.Log("ON GROUND");
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.tag == "Terrain")
-        {
-            canJump = false;
-            onGround = false;
-            Debug.Log("OFF GROUND");
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Terrain")
-        {
-            canJump = true;
-        }
-    }
-
+  
     bool IsGrounded()
     {
         Vector2 position = transform.position;
