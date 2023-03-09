@@ -91,7 +91,7 @@ public class Ability : MonoBehaviour
                 maxHits--;
                 if (maxHits <= 0)
                 {
-                    Destroy(gameObject);
+                    Destroy(gameObject,1f);
                 }
             }
         }

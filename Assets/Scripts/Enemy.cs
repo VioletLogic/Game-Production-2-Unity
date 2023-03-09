@@ -11,6 +11,7 @@ public class Enemy : Entity
     [SerializeField] float desiredDistance = 5;
     [SerializeField] SpriteRenderer enemy;
     [SerializeField] GameObject shotPrefab;
+    Animator animator;
    
 
     private void Awake()
@@ -23,7 +24,7 @@ public class Enemy : Entity
         tag = "Enemy";
         target = GameObject.Find("Player").transform;
         
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -72,16 +73,17 @@ public class Enemy : Entity
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("uhu");
-        Destroy(other.gameObject);
+        //Destroy(other.gameObject);
         Destroy(this.gameObject);
     }
 
     public void Die()
     {
+        animator.SetTrigger("isDie");
 
         //GetComponent<Collider2D>().enabled = false;
         //GetComponent<SpriteRenderer>().enabled = false;
-        Destroy(gameObject, 0.2f);
+        Destroy(gameObject, 1f);
         FindObjectOfType<EnemySpawner>().enemiesCurrentCount -= 1;
 
         ScoreManager.instance.AddScore(1);
