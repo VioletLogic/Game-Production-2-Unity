@@ -50,8 +50,20 @@ public class Player : Entity
     private void Update()
     {
         Move();
-   
-        if(Input.GetKeyDown(KeyCode.Mouse0)) {
+
+        // Check if the player is currently jumping
+        if (isJumping)
+        {
+            // Check if the player is now grounded
+            if (IsGrounded())
+            {
+                // Switch to the running animation
+                animator.Play("Player_Run", 0);
+                isJumping = false;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
             animator.Play("Player_Attack", 0);
         };
 
