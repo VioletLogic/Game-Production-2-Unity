@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4600635260117576581}
   - component: {fileID: 4600635260117576580}
   - component: {fileID: 4600635260117576601}
+  - component: {fileID: 8267234357933506938}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Enemy
@@ -154,3 +155,23 @@ MonoBehaviour:
   desiredDistance: 1.5
   enemy: {fileID: 4600635260117576583}
   shotPrefab: {fileID: 0}
+--- !u!95 &8267234357933506938
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4600635260117576578}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f92c253fe77c51c4c9c0aa11adf71c9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
