@@ -36,12 +36,13 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
-        GameManager.Instance.ChangeState(GameState.Start);
+        //GameManager.Instance.ChangeState(GameState.Start);
 
     }
 
     public void Restart()
     {
+        
         SceneManager.LoadScene(0);
         //GameManager.Instance.ChangeState(GameState.Win);
 
@@ -65,6 +66,7 @@ public class MenuManager : MonoBehaviour
 
     public void Resume()
     {
+
         pauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
 
