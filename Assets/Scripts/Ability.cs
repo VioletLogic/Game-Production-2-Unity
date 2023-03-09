@@ -76,7 +76,10 @@ public class Ability : MonoBehaviour
                 {
                     if (e.HasEffect(requitesEffect, true))
                     {
-                        Effect effect = Instantiate(appliesEffect, e.gameObject.transform);
+                        if (appliesEffect != null)
+                        {
+                            Effect effect = Instantiate(appliesEffect, e.gameObject.transform);
+                        }
                     }
              
                 }
