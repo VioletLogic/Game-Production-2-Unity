@@ -134,7 +134,7 @@ public class Player : Entity
         else
         {
             // Jump...
-            rb.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
             animator.Play("Player_Jump", 0);
             Debug.Log("hello");
         }
