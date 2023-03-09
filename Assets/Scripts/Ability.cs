@@ -39,6 +39,13 @@ public class Ability : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = offset;
         tag = "Ability";
         transform.position += new Vector3(offset.x, offset.y, 0);
+
+        player = FindObjectOfType<Player>();
+        if (player == null)
+        {
+            Debug.LogError("No Player found in the scene!");
+            return;
+        }
     }
 
     // Update is called once per frame
@@ -51,16 +58,17 @@ public class Ability : MonoBehaviour
         }
         Vector2 pos = transform.position;
 
-        //if(player.isFlipped)
-        //{
-            transform.position += Time.fixedDeltaTime * new Vector3(-direction.x, direction.y, 0);
-
-        //}
-        //else
-        //{
-        //    transform.position += Time.fixedDeltaTime * new Vector3(direction.x, direction.y, 0);
-
-        //}
+        // get the direction based on the player's facing direction
+        if (player.isFlipped)
+        {
+            direction = Vector2.left;
+        }
+        else
+        {
+            direction = Vector2.right;
+        }
+        direction *= 5f;
+        transform.position += Time.fixedDeltaTime * new Vector3(direction.x, direction.y, 0);
         direction.y += gravaty * Time.fixedDeltaTime;
     }
 
