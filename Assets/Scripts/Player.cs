@@ -7,7 +7,7 @@ using UnityEngine.Scripting.APIUpdating;
 public class Player : Entity
 {
     private float horizontalInput;
-    private float maxspeed = 10.0f;
+    private float maxspeed = 2.5f;
     private float leftInput;
     private Animator animator;
 
@@ -96,11 +96,13 @@ public class Player : Entity
             isFlipped=false;
         }
 
+
+
         //Jump
-        if (Input.GetKeyDown(KeyCode.Space) )
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             canJump = !canJump;
-            if(canJump)
+            if (canJump)
             {
                 velocity = jumpForce;
             }
@@ -108,8 +110,9 @@ public class Player : Entity
             transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);
 
         }
+
         canJump = false;
-        //}
+
     }
 
 
