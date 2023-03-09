@@ -18,11 +18,13 @@ public class Player : Entity
     private bool isRunning = false;
 
     private bool canJump = false;
+    bool onGround;
+
     public float jumpForce = 3;
 
     float velocity;
     private Rigidbody2D rb;
-
+    public LayerMask groundLayer;
     private void Awake()
     {
         // get a reference to the SpriteRenderer component on this gameObject
@@ -99,23 +101,69 @@ public class Player : Entity
 
 
         //Jump
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && onGround == true)
         {
-            canJump = !canJump;
-            if (canJump)
-            {
-                velocity = jumpForce;
-            }
 
-            transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);
+            Jump();
 
         }
-
-        canJump = false;
-
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Terrain")
+        {
+            onGround = true;
+            canJump = true;
+            Debug.Log("ON GROUND");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == "Terrain")
+        {
+            canJump = false;
+            onGround = false;
+            Debug.Log("OFF GROUND");
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Terrain")
+        {
+            canJump = true;
+        }
+    }
 
-}
+    bool IsGrounded()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = 1.0f;
+        Debug.DrawRay(position, direction, Color.green);
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    void Jump()
+    {
+        if (!IsGrounded())
+        {
+            return;
+        }
+        else
+        {
+            // Jump...
+            rb.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+            animator.Play("Player_Jump", 0);
+            Debug.Log("hello");
+        }
+    }
+    }
 
 

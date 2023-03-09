@@ -12,7 +12,7 @@ public class Enemy : Entity
     [SerializeField] SpriteRenderer enemy;
     [SerializeField] GameObject shotPrefab;
     Animator animator;
-   
+    private bool isAttacking;
 
     private void Awake()
     {
@@ -25,6 +25,7 @@ public class Enemy : Entity
         target = GameObject.Find("Player").transform;
         
         animator = GetComponent<Animator>();
+        isAttacking = false;
     }
 
     // Update is called once per frame
@@ -37,17 +38,29 @@ public class Enemy : Entity
             // transform.LookAt(target);
             transform.rotation = target.rotation;
         }
+        float d = Mathf.Abs(target.position.x - transform.position.x);
+        animator.SetFloat("d", d, 0.05f, Time.deltaTime);
+        //target.transform.position.x
 
-        
+
     }
     private void FixedUpdate()
     {
 
         // follow the  player
         float distance = Vector3.Distance(target.position, transform.position);
+        //Debug.Log(distance);
+        //if (distance < ) {
+          
+        //    animator.SetBool("isAttacking", true);
+          
+        ////}
+        //else
+        //{
+        //    animator.SetBool("isAttacking", false);
+        //}
 
-
-
+  
         if (distance >= desiredDistance)
         {
              
@@ -56,8 +69,9 @@ public class Enemy : Entity
         }
         else
         {
-
+           
             rb.velocity = Vector3.zero;
+          
         }
         if (target.position.x  < transform.position.x)
         {
@@ -66,7 +80,7 @@ public class Enemy : Entity
         {
             enemy.flipX = true;
         }
-
+      
         
     }
     
