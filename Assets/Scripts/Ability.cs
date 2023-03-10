@@ -38,7 +38,7 @@ public class Ability : MonoBehaviour
         player = GetComponent<Player>();
         GetComponent<Rigidbody2D>().velocity = offset;
         tag = "Ability";
-        transform.position += new Vector3(offset.x, offset.y, 0);
+        transform.position += new Vector3(offset.x - 0.25f, offset.y, 0);
 
         player = FindObjectOfType<Player>();
         if (player == null)
@@ -58,6 +58,18 @@ public class Ability : MonoBehaviour
         }
         Vector2 pos = transform.position;
 
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (player.isFlipped)
+        {
+            direction = Vector2.left;
+            spriteRenderer.flipX = false; // flip sprite back to normal when facing left
+        }
+        else
+        {
+            direction = Vector2.right;
+            spriteRenderer.flipX = true; // flip sprite horizontally when facing right
+        }
         // get the direction based on the player's facing direction
         if (player.isFlipped)
         {
