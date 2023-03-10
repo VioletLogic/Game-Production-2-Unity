@@ -6,7 +6,6 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class Player : Entity
 {
-   
     private float horizontalInput;
     private float maxspeed = 2.5f;
     private float leftInput;
@@ -150,8 +149,7 @@ public class Player : Entity
             // Jump...
             rb.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
             animator.Play("Player_Jump", 0);
-            SoundManager.Instance.playJumpSound();
-    
+            Debug.Log("hello");
         }
     }
     }

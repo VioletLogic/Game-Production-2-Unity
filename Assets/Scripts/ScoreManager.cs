@@ -70,6 +70,5 @@ public class ScoreManager : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= 1;
-        SoundManager.Instance.playhitSound();
     }
 }
