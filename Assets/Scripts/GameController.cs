@@ -84,9 +84,11 @@ public class GameController : MonoBehaviour
 
     void Attack()
     {
+      
         //Basic
         if (Input.GetKeyDown(KeyCode.Mouse0) && cdBasic <= 0)
         {
+            SoundManager.Instance.playAttackSound();
             isAttacking = !isAttacking;
             runes[1].ActivateAbility(1);
             cdBasic = runes[1].cooldownBasic;
@@ -94,6 +96,7 @@ public class GameController : MonoBehaviour
         //Special
         if (Input.GetKeyDown(KeyCode.Mouse1) && cdSpecial <= 0)
         {
+            SoundManager.Instance.playAttackSound();
             isAttacking = !isAttacking;
             runes[2].ActivateAbility(2);
             cdSpecial = runes[2].cooldownSpecial;
@@ -101,6 +104,7 @@ public class GameController : MonoBehaviour
         //Utility
         if (Input.GetKeyDown(KeyCode.E) && cdUtility <= 0)
         {
+            SoundManager.Instance.playAttackSound();
             isAttacking = !isAttacking;
             runes[3].ActivateAbility(3);
             cdUtility = runes[3].cooldownUtility;
@@ -108,6 +112,7 @@ public class GameController : MonoBehaviour
         //Ultimate
         if (Input.GetKeyDown(KeyCode.R) && cdUltimate <= 0)
         {
+            SoundManager.Instance.playAttackSound();
             isAttacking = !isAttacking;
             runes[4].ActivateAbility(4);
             cdUltimate = runes[4].cooldownUltimate;
