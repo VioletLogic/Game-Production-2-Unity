@@ -41,10 +41,11 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Start:
                 Debug.Log("Start state");
+                Time.timeScale = 1f;
                 break;
             case GameState.Win:
                 //stop game// show UI MENU
-               
+                Time.timeScale = 0.0f;
                 //SceneManager.LoadScene(2);
                 winPanel.SetActive(true);
                 Debug.Log("wiiiiiiiiiiiiiiiiiiin");
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
                 //STOP GAME // SHOW UI MENU 
                 //SceneManager.LoadScene(0);
                 losePanel.SetActive(true);
-               
+                Time.timeScale = 0.0f;
                 Debug.Log("Looooooooose");
                 break;
             default:
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
         if (ScoreManager.instance.health <= 0)
         {
             ChangeState(GameState.Lose);
+            SoundManager.Instance.playdeadSound();
         }
     }
     public enum GameState
