@@ -20,10 +20,7 @@ public class ParaBackground : MonoBehaviour
         float deltaX = cameraTransform.position.x - lastCameraPosition.x;
         float deltaY = cameraTransform.position.y - lastCameraPosition.y;
 
-        //if (transform.position.x < 10f ) // Replace yourDesiredXValue with the x value where you want the scrolling to stop.
-        //{
-            transform.position += new Vector3(deltaX * parallaxFactor, deltaY * parallaxFactor, 0f);
-        //}
+        transform.position += new Vector3(deltaX * parallaxFactor, deltaY * parallaxFactor, 0f);
 
         lastCameraPosition = cameraTransform.position;
     }
