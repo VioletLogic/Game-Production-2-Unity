@@ -39,7 +39,7 @@ public class Enemy : Entity
             transform.rotation = target.rotation;
         }
         float d = Mathf.Abs(target.position.x - transform.position.x);
-        animator.SetFloat("d", d, 0.05f, Time.deltaTime);
+        animator.SetFloat("d", d, 1f, Time.deltaTime);
         //target.transform.position.x
 
 
