@@ -93,6 +93,30 @@ public class Player : Entity
             Jump();
 
         }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            isRunning = !isRunning;
+
+            Debug.Log("left");
+
+            // if the variable isn't empty (we have a reference to our SpriteRenderer
+            if (mySpriteRenderer != null)
+            {
+                // flip the sprite
+                mySpriteRenderer.flipX = true;
+                isFlipped = true;
+            }
+
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            isRunning = !isRunning;
+            // flip the sprite
+            mySpriteRenderer.flipX = false;
+            isFlipped = false;
+        }
 
     }
     public bool getFlipped()
@@ -115,30 +139,6 @@ public class Player : Entity
 
        
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            isRunning = !isRunning;
-
-            Debug.Log("left");
-          
-            // if the variable isn't empty (we have a reference to our SpriteRenderer
-            if (mySpriteRenderer != null)
-            {
-                // flip the sprite
-                mySpriteRenderer.flipX = true;
-                isFlipped = true;
-            }
-
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            isRunning = !isRunning;
-            // flip the sprite
-            mySpriteRenderer.flipX = false;
-            isFlipped=false;
-        }
 
 
     }
@@ -162,19 +162,12 @@ public class Player : Entity
 
     void Jump()
     {
-        //if (!IsGrounded())
-        //{
-        //    return;
-        //}
-        //else
-        //{
         // Jump...
         rb.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
         animator.Play("Player_Jump", 0);
         Debug.Log("hello");
-        //    }
-        //}
+
     }
-    }
+}
 
 
