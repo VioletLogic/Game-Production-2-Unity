@@ -10,6 +10,7 @@ public class Player : Entity
     private float maxspeed = 2.5f;
     private float leftInput;
     private Animator animator;
+    Rigidbody m_Rigidbody;
 
     private SpriteRenderer mySpriteRenderer;
     public bool isFlipped { get; set;  }
@@ -39,17 +40,15 @@ public class Player : Entity
     {
         tag = "Player";
         isFlipped = false;
+        m_Rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
-    }
-
-    private void Update()
-    {
         Move();
+
+        Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         // Check if the player is currently jumping
         if (isJumping)
@@ -63,9 +62,37 @@ public class Player : Entity
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
             animator.Play("Player_Attack", 0);
         };
+
+    }
+
+    private void Update()
+    {
+        //Move();
+
+        //// Check if the player is currently jumping
+        //if (isJumping)
+        //{
+        //    // Check if the player is now grounded
+        //    if (IsGrounded())
+        //    {
+        //        // Switch to the running animation
+        //        animator.Play("Player_Run", 0);
+        //        isJumping = false;
+        //    }s
+
+        //if (Input.GetKeyDown(KeyCode.Mouse0)) {
+        //    animator.Play("Player_Attack", 0);
+        //};
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        {
+
+            Jump();
+
+        }
 
     }
     public bool getFlipped()
@@ -74,6 +101,7 @@ public class Player : Entity
     }
     void Move()
     {
+
         horizontalInput = Input.GetAxis("Horizontal");
 
 
@@ -84,6 +112,8 @@ public class Player : Entity
         moveDirection.Normalize();
 
         transform.Translate(Vector2.right * Time.deltaTime * horizontalInput * speed);
+
+       
 
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -111,14 +141,6 @@ public class Player : Entity
         }
 
 
-
-        //Jump
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
-        {
-
-            Jump();
-
-        }
     }
 
   
@@ -140,17 +162,18 @@ public class Player : Entity
 
     void Jump()
     {
-        if (!IsGrounded())
-        {
-            return;
-        }
-        else
-        {
-            // Jump...
-            rb.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
-            animator.Play("Player_Jump", 0);
-            Debug.Log("hello");
-        }
+        //if (!IsGrounded())
+        //{
+        //    return;
+        //}
+        //else
+        //{
+        // Jump...
+        rb.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
+        animator.Play("Player_Jump", 0);
+        Debug.Log("hello");
+        //    }
+        //}
     }
     }
 
