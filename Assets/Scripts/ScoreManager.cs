@@ -11,6 +11,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance { get; private set; }
 
     public int score;
+    public bool win = false;
     public int health;
     //public TMP_Text scoreText;
 

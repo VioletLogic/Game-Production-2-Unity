@@ -9,7 +9,8 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
     AudioSource m_audioSource;
-    [SerializeField] public AudioClip hitSound, deathSound, attackSound, jumpSound;
+    [SerializeField] public AudioClip hitSound, deathSound, attackSound, jumpSound, winSound
+        ;
     private void Awake()
     {
         if (Instance != null && this != Instance)
@@ -40,5 +41,9 @@ public class SoundManager : MonoBehaviour
     public void playhitSound()
     {
         PlayAudioClip(hitSound, 1);
+    }
+    public void playWinSound()
+    {
+        PlayAudioClip(winSound, 0.2f);
     }
 }

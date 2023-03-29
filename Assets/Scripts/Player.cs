@@ -71,23 +71,25 @@ public class Player : Entity
 
     private void Update()
     {
-        //Move();
 
-        //// Check if the player is currently jumping
-        //if (isJumping)
-        //{
-        //    // Check if the player is now grounded
-        //    if (IsGrounded())
-        //    {
-        //        // Switch to the running animation
-        //        animator.Play("Player_Run", 0);
-        //        isJumping = false;
-        //    }s
 
-        //if (Input.GetKeyDown(KeyCode.Mouse0)) {
-        //    animator.Play("Player_Attack", 0);
-        //};
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+            //Move();
+
+            //// Check if the player is currently jumping
+            //if (isJumping)
+            //{
+            //    // Check if the player is now grounded
+            //    if (IsGrounded())
+            //    {
+            //        // Switch to the running animation
+            //        animator.Play("Player_Run", 0);
+            //        isJumping = false;
+            //    }s
+
+            //if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            //    animator.Play("Player_Attack", 0);
+            //};
+            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
 
             Jump();
@@ -168,6 +170,10 @@ public class Player : Entity
         Debug.Log("hello");
 
     }
+
+
+
+
 }
 
 

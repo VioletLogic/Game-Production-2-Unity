@@ -46,8 +46,8 @@ public class GameManager : MonoBehaviour
             case GameState.Win:
                 //stop game// show UI MENU
                 Time.timeScale = 0.0f;
-                //SceneManager.LoadScene(2);
-                winPanel.SetActive(true);
+                SceneManager.LoadScene(2);
+                //winPanel.SetActive(true);
                 Debug.Log("wiiiiiiiiiiiiiiiiiiin");
                 break;
             case GameState.Lose:
@@ -64,11 +64,20 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newstate);
     }
 
+    void Win()
+    {
+        ChangeState(GameState.Win);
+    }
     public void HandleDecide()
     {
-        if (ScoreManager.instance.score == 10)
+        if (ScoreManager.instance.win)
         {
-            ChangeState(GameState.Win);
+
+            SoundManager.Instance.playWinSound();
+            
+            Invoke("Win", 6);
+           
+
         }
 
 
