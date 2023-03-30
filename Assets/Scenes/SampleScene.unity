@@ -42931,6 +42931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  win: 0
   health: 0
   emptyHeart: {fileID: 21300000, guid: 6df99f17c0b72fc49b41a74c46720976, type: 3}
   fullHeart: {fileID: 21300000, guid: 4e2555d5753ed38408c8a05a8332efb8, type: 3}
@@ -44914,6 +44915,8 @@ GameObject:
   - component: {fileID: 1473067702}
   - component: {fileID: 1473067705}
   - component: {fileID: 1473067704}
+  - component: {fileID: 1473067707}
+  - component: {fileID: 1473067706}
   m_Layer: 0
   m_Name: TX Chest Animation Golden 0
   m_TagString: Untagged
@@ -44982,7 +44985,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473067701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.221, y: -1.294, z: 0}
+  m_LocalPosition: {x: -8.91, y: -0.74, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45022,12 +45025,45 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473067701}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a424f96f7d73fa4e9b8259d9a9dcf66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!50 &1473067706
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473067701}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &1473067707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473067701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50acd843c32f4364394273b7f026b244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1476173909
 GameObject:
   m_ObjectHideFlags: 0
@@ -45077,7 +45113,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 1e96e9dd78763da42a351bfe6c143a3b, type: 3}
   attackSound: {fileID: 8300000, guid: 2d490a3e05c84b14ba7712295afbf309, type: 3}
   jumpSound: {fileID: 8300000, guid: 1a1a1bd140e0be9418a989026cfdd336, type: 3}
-  winSound: {fileID: 0}
+  winSound: {fileID: 8300000, guid: 751c258de39416240bff2fabfd908646, type: 3}
 --- !u!82 &1476173912
 AudioSource:
   m_ObjectHideFlags: 0
