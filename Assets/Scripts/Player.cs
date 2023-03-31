@@ -17,7 +17,7 @@ public class Player : Entity
 
     private bool isJumping = false;
     private bool isRunning = false;
-
+    
     private bool canJump = false;
     bool onGround;
 
@@ -53,20 +53,16 @@ public class Player : Entity
         // Check if the player is currently jumping
         if (isJumping)
         {
+            animator.SetBool("isJump", true);
             // Check if the player is now grounded
             if (IsGrounded())
             {
                 // Switch to the running animation
-                animator.Play("Player_Run", 0);
                 isJumping = false;
+                //animator.Play("Player_Run", 0);
+                animator.SetBool("isJump", false);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            animator.Play("Player_Attack", 0);
-        };
-
     }
 
     private void Update()
@@ -89,12 +85,13 @@ public class Player : Entity
             //if (Input.GetKeyDown(KeyCode.Mouse0)) {
             //    animator.Play("Player_Attack", 0);
             //};
-            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
 
             Jump();
 
         }
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             isRunning = !isRunning;
@@ -108,18 +105,16 @@ public class Player : Entity
                 mySpriteRenderer.flipX = true;
                 isFlipped = true;
             }
-
-
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
             isRunning = !isRunning;
+            Debug.Log("Right");
             // flip the sprite
             mySpriteRenderer.flipX = false;
             isFlipped = false;
         }
-
     }
     public bool getFlipped()
     {
@@ -127,7 +122,6 @@ public class Player : Entity
     }
     void Move()
     {
-
         horizontalInput = Input.GetAxis("Horizontal");
 
 
@@ -138,11 +132,6 @@ public class Player : Entity
         moveDirection.Normalize();
 
         transform.Translate(Vector2.right * Time.deltaTime * horizontalInput * speed);
-
-       
-
-
-
     }
 
   
@@ -166,14 +155,9 @@ public class Player : Entity
     {
         // Jump...
         rb.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
-        animator.Play("Player_Jump", 0);
+        //animator.Play("Player_Jump", 0);
         Debug.Log("hello");
-
     }
-
-
-
-
 }
 
 
