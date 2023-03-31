@@ -32,7 +32,7 @@ public class SoundManager : MonoBehaviour
     }
     public void playdeadSound()
     {
-        PlayAudioClip(deathSound, 1);
+        PlayAudioClip(deathSound, 0.8f);
     }
     public void playAttackSound()
     {

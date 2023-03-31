@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject pauseMenu, losePanel, winPanel, StartPanel, playButton;
-
+    public static bool played = false;
     public static GameManager Instance;
     public static event Action<GameState> OnGameStateChanged;
     public static GameManager instance { get; private set; }
@@ -80,11 +80,14 @@ public class GameManager : MonoBehaviour
 
         }
 
-
         if (ScoreManager.instance.health <= 0)
         {
             ChangeState(GameState.Lose);
-            SoundManager.Instance.playdeadSound();
+            if (!played)
+            {
+                SoundManager.Instance.playdeadSound();
+                played = true; // Plays sound only once
+            }
         }
     }
     public enum GameState

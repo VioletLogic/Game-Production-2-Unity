@@ -87,11 +87,9 @@ public class Player : Entity
             //};
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-
             Jump();
-
         }
-
+        //else if (Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded())
         if (Input.GetKeyDown(KeyCode.A))
         {
             isRunning = !isRunning;
@@ -154,6 +152,7 @@ public class Player : Entity
     void Jump()
     {
         // Jump...
+        isJumping = true;
         rb.AddForce(new Vector2(0, 4), ForceMode2D.Impulse);
         //animator.Play("Player_Jump", 0);
         Debug.Log("hello");
