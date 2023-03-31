@@ -57449,7 +57449,8 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 1e96e9dd78763da42a351bfe6c143a3b, type: 3}
   attackSound: {fileID: 8300000, guid: 2d490a3e05c84b14ba7712295afbf309, type: 3}
   jumpSound: {fileID: 8300000, guid: 1a1a1bd140e0be9418a989026cfdd336, type: 3}
-  winSound: {fileID: 8300000, guid: 751c258de39416240bff2fabfd908646, type: 3}
+  winSound: {fileID: 8300000, guid: a22dace9db02136468d7d909ee8a643a, type: 3}
+  music: {fileID: 8300000, guid: f02a530940915ba49a5995d627846017, type: 3}
 --- !u!82 &1476173912
 AudioSource:
   m_ObjectHideFlags: 0
@@ -57506,7 +57507,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.48
       inSlope: 0
       outSlope: 0
       tangentMode: 0

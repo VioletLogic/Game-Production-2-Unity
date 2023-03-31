@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
     AudioSource m_audioSource;
-    [SerializeField] public AudioClip hitSound, deathSound, attackSound, jumpSound, winSound
+    [SerializeField] public AudioClip hitSound, deathSound, attackSound, jumpSound, winSound, music
         ;
     private void Awake()
     {
@@ -28,7 +28,7 @@ public class SoundManager : MonoBehaviour
     }
     public void playJumpSound()
     {
-        PlayAudioClip(jumpSound, 3);
+        PlayAudioClip(jumpSound, 0.3f);
     }
     public void playdeadSound()
     {
@@ -36,14 +36,18 @@ public class SoundManager : MonoBehaviour
     }
     public void playAttackSound()
     {
-        PlayAudioClip(attackSound, 1);
+        PlayAudioClip(attackSound, 0.3f);
     }
     public void playhitSound()
     {
-        PlayAudioClip(hitSound, 1);
+        PlayAudioClip(hitSound, 0.5f);
     }
     public void playWinSound()
     {
-        PlayAudioClip(winSound, 0.2f);
+        PlayAudioClip(winSound, 0.3f);
+    }
+    public void playMusic()
+    {
+        PlayAudioClip(music, 0.8f);
     }
 }

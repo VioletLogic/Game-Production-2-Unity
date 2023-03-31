@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        SoundManager.Instance.playMusic();
         ChangeState(GameState.Start);
     }
 
