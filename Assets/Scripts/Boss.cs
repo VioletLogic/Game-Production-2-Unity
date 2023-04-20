@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Entity
+public class Boss : Entity
 {
     [SerializeField] float movespeed = 5;
     Rigidbody2D rb;
     Transform target;
     Vector2 move;
-    [SerializeField] float desiredDistance = 5;
+    [SerializeField] float desiredDistance = 1;
     [SerializeField] SpriteRenderer enemy;
-    [SerializeField] GameObject shotPrefab;
+
     Animator animator;
     private bool isAttacking;
 
@@ -51,23 +51,23 @@ public class Enemy : Entity
         float distance = Vector3.Distance(target.position, transform.position);
         //Debug.Log(distance);
         //if (distance < ) {
-
+          
         //    animator.SetBool("isAttacking", true);
-
+          
         ////}
         //else
         //{
         //    animator.SetBool("isAttacking", false);
         //}
-        if (distance >= 5)
+
+  if (distance >= 5)
         {
             rb.velocity = Vector3.zero;
         }
-
-        else if ((distance >= desiredDistance) && (distance <= 5))
+       else if ((distance >= desiredDistance) && (distance <= 5))
         {
 
-
+            animator.Play("Boss_Walk");
             rb.velocity = new Vector2(move.x, 0) * movespeed;
         }
         else
@@ -86,12 +86,16 @@ public class Enemy : Entity
       
         
     }
-    
-    private void OnTriggerEnter2D(Collider2D other)
+
+  IEnumerator OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("uhu");
-        //Destroy(other.gameObject);
-        Destroy(this.gameObject);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("uhu");
+            ScoreManager.instance.TakeDamage(1);
+            animator.Play("Player_Hit", 0);
+            yield return new WaitForSeconds(2);
+        }
     }
 
     public void Die()
