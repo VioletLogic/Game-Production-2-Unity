@@ -44,7 +44,7 @@ public class SoundManager : MonoBehaviour
     }
     public void playWinSound()
     {
-        PlayAudioClip(winSound, 0.3f);
+        PlayAudioClip(winSound, 0.2f);
     }
     public void playMusic()
     {
